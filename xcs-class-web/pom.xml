@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.xchanging.xcc</groupId>
+    <artifactId>xcs-class</artifactId>
+    <version>0.0.1</version>
+  </parent>
+  <artifactId>xcs-class-web</artifactId>
+  <packaging>war</packaging>
+  
+  <dependencies>
+      <dependency>
+         <groupId>com.xchanging.xcc</groupId>
+         <artifactId>xcs-class-ejb</artifactId>
+         <type>ejb</type>
+         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>javax</groupId>
+	    <artifactId>javaee-api</artifactId>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+                    <!-- web.xml is not mandatory since JavaEE 5 -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <warName>xcs-class-web</warName>
+                    <archive>                   
+			            <manifest>
+			                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+			                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+			            </manifest>
+			        </archive>
+                </configuration>
+         </plugin>
+      </plugins>
+      <!-- <finalName>xcs-class-web</finalName> -->
+   </build>
+</project>
