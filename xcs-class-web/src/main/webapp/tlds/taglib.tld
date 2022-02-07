@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<!-- a tag library descriptor -->
+
+<taglib>
+   <tlibversion>1.0</tlibversion>
+   <jspversion>1.1</jspversion>
+   <shortname>screen</shortname>
+   <uri></uri>
+   <info>Claims GUI custom tags</info>
+
+  <tag>
+    <name>insert</name>
+    <tagclass>com.xchanging.xcc.web.taglib.InsertTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <info>Insert content into the screen</info>
+	
+    <attribute>
+      <name>parameter</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+	
+  </tag>         
+</taglib>
+

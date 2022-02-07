@@ -1,0 +1,32 @@
+/* CSS Document */
+.help_popup {
+  background-color: #FFFFCC;
+  border: 1px #000000 solid;
+  clip:   rect();
+  filter:progid:DXImageTransform.Microsoft.alpha();
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt; color: #000099;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  position: absolute;
+  visibility: hidden;
+  width: 250px;
+  z-index:111
+}
+.selectPopup {
+  background-color: #FFFFCC;
+  border: 1px #000000 solid;
+  clip:   rect();
+  filter:progid:DXImageTransform.Microsoft.alpha();
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt; color: #000099;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  position: absolute;
+  visibility: hidden;
+  z-index:111
+}

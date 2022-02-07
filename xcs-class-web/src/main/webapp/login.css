@@ -1,0 +1,10 @@
+/* for use on login page only */
+div.loginWindow{position: absolute; top: 0; left:0; width:400; z-index:100; background-image: url(images/loginWindow_middle.gif);}
+div.top{width:400; height:80; background-image:   url(images/loginWindow_top.gif); layer-background-image: url(images/loginWindow_top.gif);background-repeat:no-repeat;}
+div.bot{position:relative; bottom:-3px; width:400; height:18; background-image:   url(images/loginWindow_bottom.gif); layer-background-image:  url(images/loginWindow_bottom.gif); background-repeat:no-repeat;}
+div.header{position:relative; left: 20; top:-60; width:380px;}
+div.content{position:relative; left:0; top:-40; width:400px; font-size: 9pt; font-family: verdana; color:#333; padding-left, padding-right:35px; }
+
+div.loginWindow table.mainContent{border:1px solid #09C; background-color:#D1ECF5; width: 330px; padding-top:10px; padding-bottom:10px; padding-right:10px;}
+div.loginWindow table.mainContent td{font-size: 9pt; font-family: verdana; color:#333;}
+div.header table.helpButton{position:relative; left:310px; top:-22;}

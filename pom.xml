@@ -1,131 +1,150 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.xchanging.xcc</groupId>
-  <artifactId>xcs-class</artifactId>
-  <version>0.0.1</version>
-  <packaging>pom</packaging>
-  
-  <!-- <modules>
-      <module>xcs-class-ejb</module>
-      <module>xcs-class-web</module>
-      <module>xcs-class-ear</module>
-   </modules> -->
-   
-   <modules>
-      	<module>xcs-class-ejb</module>
-      	<module>xcs-class-web</module>
-      	<module>xcs-class-ear</module>
-   </modules>
-  
-  <properties>
-        <!-- Explicitly declaring the source encoding eliminates the following 
-            message: -->
-        <!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered 
-            resources, i.e. build is platform dependent! -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
- 
-        <!-- JBoss dependency versions -->
-        <version.org.jboss.as.plugins.maven.plugin>7.3.Final</version.org.jboss.as.plugins.maven.plugin>
-        <version.org.jboss.spec.jboss.javaee.6.0>3.0.0.Final</version.org.jboss.spec.jboss.javaee.6.0>
- 
-        <!-- other plugin versions -->
-        <version.compiler.plugin>2.3.1</version.compiler.plugin>
-        <version.ejb.plugin>2.3</version.ejb.plugin>
- 
-        <!-- maven-compiler-plugin -->
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-         
-        <!-- Optional: to use jboss-as:run goal -->
-        <!--<jboss-as.home>C:\Users\iByteCode\Desktop\jboss-as-7.1.0.Final</jboss-as.home> -->
-    </properties>
-  <dependencyManagement>
-        <dependencies>
-            <!-- Define the version of JBoss' Java EE 6 APIs we want to use -->
-            <!-- JBoss distributes a complete set of Java EE 6 APIs including a Bill 
-                of Materials (BOM). A BOM specifies the versions of a "stack" (or a collection) 
-                of artifacts. We use this here so that we always get the correct versions 
-                of artifacts. Here we use the jboss-javaee-6.0 stack (you can read this as 
-                the JBoss stack of the Java EE 6 APIs). You can actually use this stack with 
-                any version of JBoss AS that implements Java EE 6, not just JBoss AS 7! -->
-            <dependency>
-                <groupId>org.jboss.spec</groupId>
-                <artifactId>jboss-javaee-6.0</artifactId>
-                <version>${version.org.jboss.spec.jboss.javaee.6.0}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            
-            <dependency>
-	            <groupId>javax</groupId>
-	            <artifactId>javaee-api</artifactId>
-	            <version>7.0</version>
-	            <scope>provided</scope>
-	         </dependency>
-            
-            <dependency>
-		         <groupId>com.xchanging.xcc</groupId>
-		         <artifactId>xcs-class-ejb</artifactId>
-		         <version>0.0.1</version>
-		         <type>ejb</type>
-		         <scope>provided</scope>
-		      </dependency>
-		      
-		      <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>xcs-class-web</artifactId>
-                <version>0.0.1</version>
-                <type>war</type>
-                <scope>compile</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-  
-      <build>
-              <pluginManagement>
-         <plugins>
-            <plugin>
-               <artifactId>maven-compiler-plugin</artifactId>
-               <version>3.3</version>
-               <configuration>
-                  <source>1.8</source>
-                  <target>1.8</target>
-               </configuration>
-            </plugin>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.xchanging.xcc</groupId>
+	<artifactId>xcs-class</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
 
-            <plugin>
-               <artifactId>maven-ejb-plugin</artifactId>
-               <version>2.5.1</version>
-               <configuration>
-                  <ejbVersion>3.1</ejbVersion>
-               </configuration>
-            </plugin>
+	<!-- <modules> <module>xcs-class-ejb</module> <module>xcs-class-web</module> 
+		<module>xcs-class-ear</module> </modules> -->
 
-            <plugin>
-               <artifactId>maven-war-plugin</artifactId>
-               <version>2.6</version>
-               <configuration>
-                  <failOnMissingWebXml>false</failOnMissingWebXml>
-               </configuration>
-            </plugin>
+	<modules>
+		<module>xcs-class-ejb</module>
+		<module>xcs-class-web</module>
+		<module>xcs-class-ear</module>
+	</modules>
 
-            <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-ear-plugin</artifactId>
-               <version>2.10.1</version>
-               <configuration>
-                  <version>7</version>
-                  <modules>
-                     <webModule>
-                        <groupId>com.xchanging.xcc</groupId>
-                        <artifactId>xcs-class-web</artifactId>
-                        <contextRoot>/</contextRoot>
-                     </webModule>
-                  </modules>
-               </configuration>
-            </plugin>
-         </plugins>
-      </pluginManagement>
-      <!-- <finalName>${project.artifactId}</finalName> -->
-    </build>
+	<properties>
+		<!-- Explicitly declaring the source encoding eliminates the following 
+			message: -->
+		<!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered 
+			resources, i.e. build is platform dependent! -->
+		<!-- <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> -->
+
+		<!-- JBoss dependency versions -->
+		<version.org.jboss.as.plugins.maven.plugin>7.3.Final</version.org.jboss.as.plugins.maven.plugin>
+		<version.org.jboss.spec.jboss.javaee.6.0>3.0.0.Final</version.org.jboss.spec.jboss.javaee.6.0>
+
+		<!-- other plugin versions -->
+		<version.compiler.plugin>2.3.1</version.compiler.plugin>
+		<version.ejb.plugin>2.3</version.ejb.plugin>
+
+		<!-- maven-compiler-plugin -->
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+
+		<!-- Optional: to use jboss-as:run goal -->
+		<!--<jboss-as.home>C:\Users\iByteCode\Desktop\jboss-as-7.1.0.Final</jboss-as.home> -->
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- Define the version of JBoss' Java EE 6 APIs we want to use -->
+			<!-- JBoss distributes a complete set of Java EE 6 APIs including a Bill 
+				of Materials (BOM). A BOM specifies the versions of a "stack" (or a collection) 
+				of artifacts. We use this here so that we always get the correct versions 
+				of artifacts. Here we use the jboss-javaee-6.0 stack (you can read this as 
+				the JBoss stack of the Java EE 6 APIs). You can actually use this stack with 
+				any version of JBoss AS that implements Java EE 6, not just JBoss AS 7! -->
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-6.0</artifactId>
+				<version>${version.org.jboss.spec.jboss.javaee.6.0}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>7.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.xchanging.xcc</groupId>
+				<artifactId>xcs-class-ejb</artifactId>
+				<version>0.0.1</version>
+				<type>ejb</type>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>xcs-class-web</artifactId>
+				<version>0.0.1</version>
+				<type>war</type>
+				<scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+		      <groupId>com.xchanging</groupId>
+		      <artifactId>attunity</artifactId>
+		      <version>1.0</version>
+		    </dependency>
+		     <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+			<dependency>
+			    <groupId>log4j</groupId>
+			    <artifactId>log4j</artifactId>
+			    <version>1.2.17</version>
+			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/javax.comm/comm -->
+			<dependency>
+			    <groupId>javax.comm</groupId>
+			    <artifactId>comm</artifactId>
+			    <version>2.0.3</version>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.3</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>2.5.1</version>
+					<configuration>
+						<ejbVersion>3.1</ejbVersion>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.6</version>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>2.10.1</version>
+					<configuration>
+						<version>7</version>
+						<modules>
+							<webModule>
+								<groupId>com.xchanging.xcc</groupId>
+								<artifactId>xcs-class-web</artifactId>
+								<contextRoot>/</contextRoot>
+							</webModule>
+						</modules>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<finalName>${project.artifactId}</finalName>
+	</build>
 </project>

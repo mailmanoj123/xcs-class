@@ -1,0 +1,56 @@
+23:47:02,761 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 73) Initializing Mojarra 2.3.14.SP04 for context ''
+23:47:03,695 ERROR [org.jboss.msc.service.fail] (ServerService Thread Pool -- 73) MSC000001: Failed to start service jboss.deployment.subunit."xcs-class-ear-0.0.1.ear"."xcs-class-web-0.0.1.war".undertow-deployment: org.jboss.msc.service.StartException in service jboss.deployment.subunit."xcs-class-ear-0.0.1.ear"."xcs-class-web-0.0.1.war".undertow-deployment: com.xchanging.xcc.exceptions.GeneralFailureException: Reference Data table 'TGLCCDA-EXTRACT.CSV' not found.
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentService$1.run(UndertowDeploymentService.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.lang.Thread.run(Thread.java:748)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:513)
+Caused by: com.xchanging.xcc.exceptions.GeneralFailureException: Reference Data table 'TGLCCDA-EXTRACT.CSV' not found.
+	at com.xchanging.xcc.refdata.RefDataHandler.readTable(RefDataHandler.java:43)
+	at com.xchanging.xcc.web.controller.RefDAO.loadCatCodeTable(RefDAO.java:147)
+	at com.xchanging.xcc.web.controller.RefDAO.loadTables(RefDAO.java:72)
+	at com.xchanging.xcc.web.controller.RefDAO.<init>(RefDAO.java:66)
+	at com.xchanging.xcc.web.controller.FrontController.init(FrontController.java:74)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:180)
+	at io.undertow.servlet.core.LifecyleInterceptorInvocation.proceed(LifecyleInterceptorInvocation.java:117)
+	at org.wildfly.extension.undertow.security.RunAsLifecycleInterceptor.init(RunAsLifecycleInterceptor.java:78)
+	at io.undertow.servlet.core.LifecyleInterceptorInvocation.proceed(LifecyleInterceptorInvocation.java:103)
+	at io.undertow.servlet.core.ManagedServlet$DefaultInstanceStrategy.start(ManagedServlet.java:305)
+	at io.undertow.servlet.core.ManagedServlet.createServlet(ManagedServlet.java:145)
+	at io.undertow.servlet.core.DeploymentManagerImpl$2.call(DeploymentManagerImpl.java:588)
+	at io.undertow.servlet.core.DeploymentManagerImpl$2.call(DeploymentManagerImpl.java:559)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+	at io.undertow.servlet.core.DeploymentManagerImpl.start(DeploymentManagerImpl.java:601)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentService.startContext(UndertowDeploymentService.java:97)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentService$1.run(UndertowDeploymentService.java:78)
+	... 8 more
+
+	
+	quick fix 
+	
+	 catch(FileNotFoundException fnf) {
+      //throw new GeneralFailureException("Reference Data table '" + table + "' not found.");
+    }
+    
+     //getServletContext().setAttribute(Keys.RefDataKey, new RefDAO(getServletContext())); ---- FrontController.java:74
+	
+	
+	===================================================
+	
+	String dir = System.getProperty("refdata.home",Keys.RefDataDir);
+	
+	
+	
+	
+	
+	

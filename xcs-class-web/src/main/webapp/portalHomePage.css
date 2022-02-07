@@ -1,0 +1,25 @@
+table.portalIndexformCenter {width:100%; height:100%}
+table.portalIndexformCenter td.content {width:760;}
+table.portalIndexMainTable{border:1px solid #09C; width:100%; background-color:#D1ECF5; width:760px; height:300px}
+/* banner image td - to be amended to reflect portal */
+table.portalIndexMainTable td.indexBanner{width: 760; height:50; background-Image: Url(./images/indexBannerTemp.jpg);}
+table.portalIndexMainTable td.left{width:100%; height:220px; border-top:1px solid #09C; border-right:1px solid #09C; font-size: 9pt; font-family: verdana; color:#333;}
+table.portalIndexMainTable td.right{width:250px; height:220px; border-top:1px solid #09C; background-Image: Url(./images/portalIndexRightBg.gif); background-repeat: no-repeat; font-size: 9pt; font-family: verdana; color:#333;padding-left:10px; padding-top:10px}
+
+/* navigation buttons for portal index (corrects stylesheet clash) */
+table.portalIndexMainTable  table.navigationButton{border:0px;}
+table.portalIndexMainTable  table.navigationButton td.left{width:12px; height:21px; background-Image: Url(./images/navigationButton_left.gif); padding:0px; border:0px;}
+table.portalIndexMainTable  table.navigationButton td.middle{height:21px; background-Image: Url(./images/navigationButton_middle.gif); padding:0px; color:#FFF; font-family:verdana; font-size:9pt;white-space: nowrap; border:0px;}
+table.portalIndexMainTable  table.navigationButton td.right{width:12px; height:21px; background-Image: Url(./images/navigationButton_right.gif); padding:0px; border:0px;}
+
+table.portalIndexMainTable table.actionButton{}
+table.portalIndexMainTable table.actionButton td.left{width:12px; height:21px; background-Image: Url(./images/actionButton_left.gif); padding:0px; }
+table.portalIndexMainTable table.actionButton td.middle{height:21px; background-Image: Url(./images/actionButton_middle.gif); padding:0px; color:#FFF; font-family:verdana; font-size:9pt; white-space: nowrap;}
+table.portalIndexMainTable table.actionButton td.right{width:12px; height:21px; background-Image: Url(./images/actionButton_right.gif); padding:0px;}
+
+/*classes for left hand navigator */
+
+table.navigator{width:150px; border:solid 1px #09C; position:relative; top:50px;}
+table.navigator td.header{width:150px; background-color:#09C ;font-family:verdana; font-size:9pt; font-weight:bold; color:#FFF; padding:5px}
+table.navigator td.navContent {width:150px; font-family:verdana; font-size:9pt; color:#003; border-bottom: 1px solid #09C; padding:5px}
+table.navigator td.alert{width:150px; font-family:verdana; font-size:9pt; color:#C00; border-bottom: 1px solid #09C; padding:5px}

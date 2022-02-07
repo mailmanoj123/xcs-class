@@ -1,0 +1,1 @@
+// set diary date content custom validation

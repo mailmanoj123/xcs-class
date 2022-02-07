@@ -1,0 +1,1357 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  == =================================================================================
+  == Script Name: requestmaps.xml
+  == ============
+  ==  
+  == Description:  
+  == ============
+  == This file describes for each request url action, what screen should be used to 
+  == lookup template detailes etc in the screendef.xml, if the request uses a web 
+  == handler and/or a flow handler.
+  == 
+  == Author: Steria Ltd
+  == =======
+  ==
+  == Change History:  
+  == ===============
+  == Please see EOF for all change history.  
+  ==
+  == =================================================================================
+-->  
+
+<request-mappings>
+
+    <request url="/singleclaimlossnewmvmt" screen="SCR016" useWebHandler="true" useFlowHandler="false">
+        <web-handler-class>com.xchanging.xcc.web.handlers.LossReserveNewMvmtWebHandler</web-handler-class>
+    </request>
+
+    <request url="/scmadvicenewmvmt" screen="SCR017" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceNewMvmtWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SCMAdviceNewMvmtFlowHandler">
+           <handler-result result="1" screen="SCR017"/>
+           <handler-result result="2" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+    <request url="/bulkcompselectmore" screen="SCR023" useWebHandler="true" useFlowHandler="false">
+        <web-handler-class>com.xchanging.xcc.web.handlers.BulkCompSelectMoreWebHandler</web-handler-class>
+    </request>
+
+    <request url="/datawarehouse" screen="" useWebHandler="false" useFlowHandler="false">
+    </request>
+
+    <request url="/claimtransactioncreation" screen="SCR009" useWebHandler="false" useFlowHandler="false">
+    </request>
+
+    <request url="/accountenquiry" screen="" useWebHandler="false" useFlowHandler="false">
+    </request>
+
+    <request url="/repository" screen="" useWebHandler="false" useFlowHandler="false">
+    </request>
+
+    <request url="/searchresultscancel" screen="SCR005" useWebHandler="true" useFlowHandler="false">
+        <web-handler-class>com.xchanging.xcc.web.handlers.CancelAddSrchWebHandler</web-handler-class>
+    </request>
+
+    <request url="/moresearchresults" screen="SCR045" useWebHandler="true" useFlowHandler="false">
+        <web-handler-class>com.xchanging.xcc.web.handlers.MoreAddSrchWebHandler</web-handler-class>
+    </request>
+
+    <request url="/selectsearchresult" screen="SCR045" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SelectSearchResultWebHandler</web-handler-class>
+           <flow-handler class="com.xchanging.xcc.flow.handlers.FindClaimSearchFlowHandler">
+              <handler-result result="1" screen="SCR005"/>
+              <handler-result result="2" screen="SCR006"/>
+              <handler-result result="3" screen="SCR007"/>
+              <handler-result result="4" screen="SCR009"/>
+              <handler-result result="5" screen="SCR008"/>
+              <handler-result result="6" screen="SCR017"/>
+              <handler-result result="7" screen="SCR016"/>
+              <handler-result result="8" screen="SCR020"/>
+              <handler-result result="9" screen="SCR045"/>
+              <handler-result result="10" screen="SCR017_enquiry"/>              
+              <handler-result result="11" screen="SCR015"/>
+       </flow-handler>
+ </request>
+    <request url="/deletebulkconf" screen="SCR023" useWebHandler="true" useFlowHandler="false">
+        <web-handler-class>com.xchanging.xcc.web.handlers.BulkDeleteConfWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.BulkDeleteConfFlowHandler">
+                  <handler-result result="1" screen="SCR009"/>
+                  <handler-result result="2" screen="SCR012"/>
+                  <handler-result result="3" screen="SCR013"/>
+                  <handler-result result="4" screen="SCR014"/>
+                  <handler-result result="5" screen="SCR015"/>
+                  <handler-result result="6" screen="SCR020"/>
+                  <handler-result result="7" screen="SCR017"/>
+                  <handler-result result="8" screen="SCR022"/>
+                  <handler-result result="9" screen="SCR021"/>
+                  <handler-result result="10" screen="SCR023"/>
+                  <handler-result result="11" screen="SCR024"/>
+                  <handler-result result="12" screen="SCR016"/>
+                  <handler-result result="13" screen="SCR017_enquiry"/>
+        </flow-handler>
+    </request>
+
+    <request url="/errorok" screen="" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.ErrorWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.ErrorFlowHandler">
+            <handler-result result="1" screen="BACK_TWO"/>
+            <handler-result result="2" screen="SCR009"/>
+        </flow-handler>
+    </request>
+
+    <request url="/resetclaimtransaction" screen="" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.ResetClaimTransactionWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.ResetClaimTransactionFlowHandler">
+            <handler-result result="1" screen="SCR009"/>
+            <handler-result result="2" screen="SCR012"/>
+            <handler-result result="3" screen="SCR013"/>
+            <handler-result result="4" screen="SCR014"/>
+            <handler-result result="5" screen="SCR015"/>
+            <handler-result result="6" screen="SCR016"/>
+            <handler-result result="7" screen="SCR017"/>
+            <handler-result result="8" screen="SCR020"/>
+            <handler-result result="9" screen="SCR021"/>
+            <handler-result result="10" screen="SCR022"/>
+            <handler-result result="11" screen="SCR023"/>
+            <handler-result result="12" screen="SCR024"/>
+            <handler-result result="13" screen="SCR017_enquiry"/>
+        </flow-handler>
+    </request>
+
+    <request url="/exit" screen="" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.ExitWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.ExitFlowHandler">
+            <handler-result result="1" screen="SCR010"/>
+            <handler-result result="2" screen="SCR005"/>
+            <handler-result result="3" screen="SCR025"/>
+            <handler-result result="4" screen="SCR026"/>
+            <handler-result result="5" screen="SCR004"/>
+            <handler-result result="6" screen="CLOSE_WINDOW"/>
+            <handler-result result="7" screen="SCR007"/>
+            <handler-result result="8" screen="SCR006"/>
+            <handler-result result="9" screen="SCR045"/>
+        </flow-handler>
+    </request>
+
+    <request url="/selectbulksettlement" screen="SCR009" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.BulkCompSelectUcrWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.BulkCompSelectUcrFlowHandler">
+            <handler-result result="1" screen="SCR009"/>
+            <handler-result result="2" screen="SCR008"/>
+        </flow-handler>
+    </request>
+
+    <request url="/claimtransactionoptions" screen="SCR004" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.ClaimTransactionOptionsWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.ClaimTransactionOptionsFlowHandler">
+            <handler-result result="1" screen="SCR004"/>
+            <handler-result result="2" screen="SCR005"/>
+            <handler-result result="3" screen="SCR025"/>
+            <handler-result result="4" screen="SCR026"/>
+            <handler-result result="5" screen="SCR011"/>
+            <handler-result result="6" screen="ERROR_INDICATE"/>
+            <handler-result result="7" screen="PREMIUM_COMPARISON"/>
+            <handler-result result="8" screen="SCR007"/>
+            <handler-result result="9" screen="CLOSE_WINDOW"/>
+            <handler-result result="10" screen="SCR006"/>
+            <handler-result result="11" screen="SCR045"/>
+        </flow-handler>
+    </request>
+
+    <request url="/ctodelete" screen="SCR004" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.CTODeleteWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.CTODeleteFlowHandler">
+            <handler-result result="1" screen="SCR004"/>
+            <handler-result result="2" screen="SCR005"/>
+            <handler-result result="3" screen="SCR025"/>
+            <handler-result result="4" screen="SCR026"/>
+            <handler-result result="5" screen="SCR011"/>
+            <handler-result result="6" screen="SCR007"/>
+            <handler-result result="7" screen="CLOSE_WINDOW"/>
+            <handler-result result="8" screen="SCR006"/>
+            <handler-result result="9" screen="SCR045"/>
+        </flow-handler>
+    </request>
+
+    <request url="/history" screen="SCR025" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.HistoryWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.HistoryFlowHandler">
+            <handler-result result="1" screen="SCR025"/>
+            <handler-result result="2" screen="SCR026"/>
+        </flow-handler>
+    </request>
+
+    <request url="/addtakedownnumbers" screen="SCR022" useWebHandler="true" useFlowHandler="false">
+        <web-handler-class>com.xchanging.xcc.web.handlers.AddTakeDownNumberWebHandler</web-handler-class>
+    </request>
+
+    <request url="/scUpdateItem" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCUpdateItemWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaFlowHandler">
+            <handler-result result="1" screen="SCHEME_CANADA_SCREEN"/>
+        </flow-handler>
+    </request>
+
+    <request url="/scUpdateError" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCUpdateErrorWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaFlowHandler">
+            <handler-result result="1" screen="SCHEME_CANADA_SCREEN"/>
+        </flow-handler>
+    </request>
+
+    <request url="/getunmatchedlist" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCGetListWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaFlowHandler">
+            <handler-result result="1" screen="SCHEME_CANADA_SCREEN"/>
+        </flow-handler>
+    </request>
+
+    <request url="/scPrevPressed" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCPrevPressedWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaFlowHandler">
+            <handler-result result="1" screen="SCHEME_CANADA_SCREEN"/>            
+        </flow-handler>
+    </request>
+
+    <request url="/scNextPressed" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCNextPressedWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaFlowHandler">
+            <handler-result result="1" screen="SCHEME_CANADA_SCREEN"/>
+        </flow-handler>
+    </request>
+
+    <request url="/scSavePressed" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCSavePressedWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaSaveFlowHandler">
+            <handler-result result="1" screen="SC_SAVE_CONFIRMED_SCREEN"/>
+        </flow-handler>
+    </request>
+      
+    <request url="/scProcessPressed" screen="SCHEME_CANADA_SCREEN" useWebHandler="false" useFlowHandler="true">                
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaProcessFlowHandler">
+            <handler-result result="1" screen="SC_CONFIRM_PROCESS_SCREEN"/>           
+        </flow-handler>
+    </request>
+          
+    <request url="/scExitPressed" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCExitPressedWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaExitFlowHandler">
+            <handler-result result="1" screen="SC_CONFIRM_EXIT_SCREEN"/>
+            <handler-result result="2" screen="CLOSE_WINDOW"/>
+        </flow-handler>
+    </request>   
+
+    <request url="/scAutoPressed" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCAutoPressedWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaFlowHandler">
+            <handler-result result="1" screen="SCHEME_CANADA_SCREEN"/>
+        </flow-handler>
+    </request>
+
+    <request url="/scCommercialPressed" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCCommercialPressedWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaFlowHandler">
+            <handler-result result="1" screen="SCHEME_CANADA_SCREEN"/>
+        </flow-handler>
+    </request>
+
+    <request url="/scResidentialPressed" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCResidentialPressedWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaFlowHandler">
+            <handler-result result="1" screen="SCHEME_CANADA_SCREEN"/>
+        </flow-handler>
+    </request>
+
+    <request url="/scconfirmexit" screen="SC_CONFIRM_EXIT_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCConfirmExitWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaConfirmExitFlowHandler">
+            <handler-result result="1" screen="SC_SAVE_CONFIRMED_SCREEN"/>
+            <handler-result result="2" screen="CLOSE_WINDOW"/>
+        </flow-handler>
+    </request>
+    
+    <request url="/scConfirmProcess" screen="SC_CONFIRM_PROCESS_SCREEN" useWebHandler="true" useFlowHandler="true">        
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCConfirmProcessWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaFlowHandler">
+            <handler-result result="1" screen="SC_PROCESS_CONFIRMED_SCREEN"/>     
+        </flow-handler>
+    </request>
+
+    <request url="/scsaveexit" screen="SC_SAVE_CONFIRMED_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCSaveExitWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaSaveExitFlowHandler">
+            <handler-result result="1" screen="SCHEME_CANADA_SCREEN"/>
+            <handler-result result="2" screen="CLOSE_WINDOW"/>
+        </flow-handler>
+    </request>
+
+    <request url="/scautologoff" screen="SCHEME_CANADA_SCREEN" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.SCAutoLogoffWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.SchemeCanadaAutoLogoffFlowHandler">
+            <handler-result result="1" screen="CLOSE_WINDOW"/>
+        </flow-handler>
+    </request>
+
+    <request url="/navbar" screen="xxx" useWebHandler="true" useFlowHandler="true">
+            <web-handler-class>com.xchanging.xcc.web.handlers.NavBarWebHandler</web-handler-class>
+              <flow-handler class="com.xchanging.xcc.flow.handlers.NavBarFlowHandler">
+                  <handler-result result="1" screen="SCR009"/>
+                  <handler-result result="2" screen="SCR012"/>
+                  <handler-result result="3" screen="SCR013"/>
+                  <handler-result result="4" screen="SCR014"/>
+                  <handler-result result="5" screen="SCR015"/>
+                  <handler-result result="6" screen="SCR020"/>
+                  <handler-result result="7" screen="SCR017"/>
+                  <handler-result result="8" screen="SCR022"/>
+                  <handler-result result="9" screen="SCR021"/>
+                  <handler-result result="10" screen="SCR023"/>
+                  <handler-result result="11" screen="SCR024"/>
+                  <handler-result result="12" screen="SCR016"/>
+                  <handler-result result="13" screen="SCR003"/>
+                  <handler-result result="14" screen="PREMIUM_COMPARISON"/>
+                  <handler-result result="15" screen="QUESTION_SCREEN"/>
+                  <handler-result result="16" screen="SCR017_enquiry"/>
+              </flow-handler>
+    </request>
+
+    <request url="/marketselection" screen="SCR009" useWebHandler="true" useFlowHandler="true">
+            <web-handler-class>com.xchanging.xcc.web.handlers.MarketSelectedWebHandler</web-handler-class>
+              <flow-handler class="com.xchanging.xcc.flow.handlers.MarketSelectedFlowHandler">
+                  <handler-result result="1" screen="SCR009"/>
+                  <handler-result result="2" screen="SCR012"/>
+                  <handler-result result="3" screen="SCR013"/>
+                  <handler-result result="4" screen="SCR014"/>
+                  <handler-result result="5" screen="SCR015"/>
+                  <handler-result result="6" screen="SCR???"/>
+                  <handler-result result="7" screen="SCR017"/>
+                  <handler-result result="8" screen="SCR???"/>
+                  <handler-result result="9" screen="SCR003"/>
+                  <handler-result result="10" screen="SCR009"/>
+                  <handler-result result="11" screen="SCR012"/>
+                  <handler-result result="12" screen="SCR011"/>
+                  <handler-result result="13" screen="SCR004"/>
+                  <handler-result result="14" screen="SCR005"/>
+                  <handler-result result="15" screen="SCR025"/>
+                  <handler-result result="16" screen="SCR026"/>
+                  <handler-result result="17" screen="SCR035"/>
+                  <handler-result result="18" screen="SCR033"/>
+                  <handler-result result="19" screen="SCR017_enquiry"/>
+              </flow-handler>
+    </request>
+
+<request url="/createsubsequentadvice" screen="SCR009" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.CreateSubsequentAdviceWebHandler</web-handler-class>
+    </request>
+
+ <request url="/bulkccscorrectionok" screen="SCR022" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.BulkCcsCorrectOkWebHandler</web-handler-class>
+    </request>
+
+    <request url="/bulkccscorrection" screen="SCR036" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.BulkCcsCorrectWebHandler</web-handler-class>
+    </request>
+
+    <request url="/setfilelastseendate" screen="CONFIRMATION_SCREEN" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.SetFileLastSeenWebHandler</web-handler-class>
+    </request>
+
+    <request url="/setdiarydateok" screen="CLOSE_WINDOW" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SetDiaryDateOkWebHandler</web-handler-class>
+    </request>
+
+    <request url="/setdiarydate" screen="SCR034" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.SetDiaryDateWebHandler</web-handler-class>
+    </request>
+
+       <request url="/findclaim" screen="SCR005" useWebHandler="true" useFlowHandler="true">
+       <web-handler-class>com.xchanging.xcc.web.handlers.FindClaimWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.FindClaimFlowHandler">
+           <handler-result result="1" screen="SCR005"/>
+       </flow-handler>
+    </request>
+
+    <!-- // BA & PD: 24-11-2003: to create the Settlement search screen - coming from the home page after user has pressed the sett search button -->
+   <request url="/settlementsearch" screen="SCR041" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SettlementSearchWebHandler</web-handler-class>
+   </request>
+
+   <!-- // BA & PD: 24-11-2003: to create the Settlement search Results screen - once the user has entered the search criteria and pressed return -->
+   <request url="/settlementsearchresults" screen="SCR042" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.FindSettlementResultsWebHandler</web-handler-class>
+     <flow-handler class="com.xchanging.xcc.flow.handlers.FindSettlementResultsFlowHandler">
+          <handler-result result="1" screen="SCR042"/>
+          <handler-result result="2" screen="SCR043"/>
+     </flow-handler>
+   </request>
+   <!-- // BA & PD: 24-11-2003: to create the Settlement search Results screen - once the user has entered the search criteria and pressed return -->
+   <request url="/settlementsearchdetailresults" screen="SCR043" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.FindSettlementDetailsWebHandler</web-handler-class>
+   </request>
+
+   <!-- // BA & PD: 24-11-2003: to create the Settlement search Results screen - once the user has entered the search criteria and pressed return -->
+   <request url="/settlementsearchdetailexit" screen="SCR041" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.FindSettlementDetailsExitWebHandler</web-handler-class>
+     <flow-handler class="com.xchanging.xcc.flow.handlers.FindSettlementDetailsExitFlowHandler">
+          <handler-result result="1" screen="SCR041"/>
+          <handler-result result="2" screen="SCR042"/>
+     </flow-handler>
+   </request>
+
+   <!-- // BA & PD: 24-11-2003: to create the Settlement search Results screen - once the user has entered the search criteria and pressed return -->
+   <!-- note this varies only slightly from the exit button defined above- the only difference is the webhandler which clears down all the -->
+   <!-- search screen values held in the session -->
+   <request url="/settlementsearchdetailcancel" screen="SCR041" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.FindSettlementDetailsExitWebHandler</web-handler-class>
+     <flow-handler class="com.xchanging.xcc.flow.handlers.FindSettlementDetailsCancelFlowHandler">
+          <handler-result result="1" screen="SCR041"/>
+          <handler-result result="2" screen="SCR042"/>
+     </flow-handler>
+   </request>
+
+   <!-- DS 13-12-2004: Go back to the settlement search key screen -->
+   <request url="/settlementsearchdetailresultscancel" screen="SCR041" useWebHandler="false" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.FindSettlementDetailResultsCancelWebHandler</web-handler-class>
+     <flow-handler class="com.xchanging.xcc.flow.handlers.FindSettlementDetailResultsCancelFlowHandler">
+          <handler-result result="1" screen="SCR041"/>
+     </flow-handler>
+   </request>
+
+   <!-- DS 13-12-2004: Go back to the settlement search key screen -->
+   <request url="/settlementsearchcontentcancel" screen="SCR041" useWebHandler="false" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.FindSettlementSearchContentWebHandler</web-handler-class>
+     <flow-handler class="com.xchanging.xcc.flow.handlers.FindSettlementSearchContentFlowHandler">
+          <handler-result result="1" screen="SCR041"/>
+     </flow-handler>
+   </request>
+
+
+
+
+   <request url="/copyfromucr" screen="SCR033" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.CopyFromUcrWebHandler</web-handler-class>
+   </request>
+
+    <request url="/copyfromucrok" screen="SCR009" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.CopyFromUcrOkWebHandler</web-handler-class>
+    </request>
+
+    <request url="/createcontracorrection" screen="SCR030" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.ContraCorrectionWebHandler</web-handler-class>
+    </request>
+
+    <request url="/contracorrectionrelease" screen="SCR022" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ContraCorrectReleaseWebHandler</web-handler-class>
+    </request>
+
+    <request url="/createrateofexchangeadj" screen="SCR029" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.RateOfExchWebHandler</web-handler-class>
+    </request>
+
+    <request url="/roeadjrelease" screen="SCR022" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.RateOfExchReleaseWebHandler</web-handler-class>
+    </request>
+
+    <request url="/narrativesave" screen="SCR035" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.NarrativeOkWebHandler</web-handler-class>
+    </request>
+
+    <request url="/narrative" screen="SCR035" useWebHandler="true" useFlowHandler="true">
+            <web-handler-class>com.xchanging.xcc.web.handlers.NarrativeWebHandler</web-handler-class>
+            <flow-handler class="com.xchanging.xcc.flow.handlers.NarrativeFlowHandler">
+                  <handler-result result="1" screen="SCR035"/>
+                  <handler-result result="2" screen="PREMIUM_COMPARISON"/>
+                  <handler-result result="3" screen="SCR011"/>
+              </flow-handler>
+    </request>
+
+    <request url="/narrativeok" screen="" useWebHandler="true" useFlowHandler="true">
+      <web-handler-class>com.xchanging.xcc.web.handlers.NarrativeOkWebHandler</web-handler-class>
+      <flow-handler class="com.xchanging.xcc.flow.handlers.NarrativeOkFlowHandler">
+                  <handler-result result="1" screen="SCR009"/>
+                  <handler-result result="2" screen="SCR012"/>
+                  <handler-result result="3" screen="SCR013"/>
+                  <handler-result result="4" screen="SCR014"/>
+                  <handler-result result="5" screen="SCR015"/>
+                  <handler-result result="6" screen="SCR016"/>
+                  <handler-result result="7" screen="SCR017"/>
+                  <handler-result result="8" screen="SCR020"/>
+                  <handler-result result="9" screen="SCR021"/>
+                  <handler-result result="10" screen="SCR022"/>
+                  <handler-result result="11" screen="SCR023"/>
+                  <handler-result result="12" screen="SCR024"/>
+                  <handler-result result="13" screen="SCR017_enquiry"/>
+              </flow-handler>
+  </request>
+
+  <request url="/narrativecancel" screen="" useWebHandler="false" useFlowHandler="true">
+      <flow-handler class="com.xchanging.xcc.flow.handlers.NarrativeCancelFlowHandler">
+                  <handler-result result="1" screen="SCR009"/>
+                  <handler-result result="2" screen="SCR012"/>
+                  <handler-result result="3" screen="SCR013"/>
+                  <handler-result result="4" screen="SCR014"/>
+                  <handler-result result="5" screen="SCR015"/>
+                  <handler-result result="6" screen="SCR016"/>
+                  <handler-result result="7" screen="SCR017"/>
+                  <handler-result result="8" screen="SCR020"/>
+                  <handler-result result="9" screen="SCR021"/>
+                  <handler-result result="10" screen="SCR022"/>
+                  <handler-result result="11" screen="SCR023"/>
+                  <handler-result result="12" screen="SCR024"/>
+                  <handler-result result="13" screen="SCR017_enquiry"/>
+              </flow-handler>
+  </request>
+
+ <request url="/selectmovement" screen="SCR026" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MvmtHistorySelectWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.MvmtHistorySelectFlowHandler">
+           <handler-result result="1" screen="SCR026"/>
+           <handler-result result="2" screen="SCR017"/>
+           <handler-result result="3" screen="SCR016"/>
+           <handler-result result="4" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+ <request url="/mvmthistorycancel" screen="xxx" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MvmtHistoryCancelWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.MvmtHistoryCancelFlowHandler">
+           <handler-result result="1" screen="xxx"/>
+       </flow-handler>
+    </request>
+
+ <request url="/mvmthistorynext" screen="SCR026" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MvmtHistoryNextWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.MvmtHistoryNextFlowHandler">
+           <handler-result result="1" screen="SCR026"/>
+       </flow-handler>
+    </request>
+
+ <request url="/mvmthistoryprev" screen="SCR026" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MvmtHistoryPrevWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.MvmtHistoryPrevFlowHandler">
+           <handler-result result="1" screen="SCR026"/>
+       </flow-handler>
+    </request>
+
+ <request url="/selecttransaction" screen="SCR009" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.TxnHistorySelectWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.TxnHistorySelectFlowHandler">
+           <handler-result result="1" screen="SCR009"/>
+       </flow-handler>
+    </request>
+
+ <request url="/txnhistorycancel" screen="xxx" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.TxnHistoryCancelWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.TxnHistoryCancelFlowHandler">
+           <handler-result result="1" screen="xxx"/>
+       </flow-handler>
+    </request>
+
+ <request url="/txnhistorynextccy" screen="SCR025" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.TxnHistoryNextCcyWebHandler</web-handler-class>
+    </request>
+
+ <request url="/txnhistoryprevccy" screen="SCR025" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.TxnHistoryPrevCcyWebHandler</web-handler-class>
+    </request>
+
+ <request url="/txnhistorynext" screen="SCR025" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.TxnHistoryNextWebHandler</web-handler-class>
+    </request>
+
+ <request url="/txnhistoryprev" screen="SCR025" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.TxnHistoryPrevWebHandler</web-handler-class>
+    </request>
+
+ <request url="/selectsubsadvice" screen="SCR017" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SubsAdviceSelectWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SubsAdviceSelectFlowHandler">
+           <handler-result result="1" screen="SCR020"/>
+           <handler-result result="2" screen="SCR017"/>
+           <handler-result result="3" screen="SCR016"/>
+           <handler-result result="4" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+ <request url="/subsadvicecancel" screen="SCR020" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SubsAdviceCancelWebHandler</web-handler-class>
+    </request>
+
+ <request url="/subsadvicefinish" screen="SCR020" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SubsAdviceFinishWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SubsAdviceFinishFlowHandler">
+           <handler-result result="1" screen="SCR020"/>
+           <handler-result result="2" screen="SCR021"/>
+           <handler-result result="3" screen="SCR022"/>
+       </flow-handler>
+    </request>
+
+ <request url="/subsadvicenextccy" screen="SCR015" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SubsAdviceNextCcyWebHandler</web-handler-class>
+    </request>
+
+ <request url="/subsadvicedelete" screen="SCR020" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SubsAdviceDeleteWebHandler</web-handler-class>
+    </request>
+
+ <request url="/subsadvicenewbd" screen="SCR020" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SubsAdviceNewBDWebHandler</web-handler-class>
+    </request>
+
+ <request url="/subsadvicenext" screen="SCR020" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SubsAdviceNextWebHandler</web-handler-class>
+    </request>
+
+ <request url="/subsadviceprev" screen="SCR020" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SubsAdvicePrevWebHandler</web-handler-class>
+    </request>
+
+ <request url="/subsadvicesave" screen="SCR020" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SubsAdviceSaveWebHandler</web-handler-class>
+    </request>
+
+ <request url="/singleclaimlosscancel" screen="SCR016" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.LossReserveCancelWebHandler</web-handler-class>
+    </request>
+
+ <request url="/singleclaimlosscontinue" screen="SCR017" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.LossReserveContinueWebHandler</web-handler-class>
+     <flow-handler class="com.xchanging.xcc.flow.handlers.LossReserveContinueFlowHandler">
+           <handler-result result="1" screen="SCR016"/>
+           <handler-result result="2" screen="SCR017"/>
+           <handler-result result="3" screen="SCR017_enquiry"/>
+       </flow-handler>
+  </request>
+
+ <request url="/singleclaimlosssave" screen="SCR016" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.LossReserveSaveWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.LossReserveSaveFlowHandler">
+           <handler-result result="1" screen="SCR016"/>
+       </flow-handler>
+    </request>
+
+ <request url="/bulkcompselectcancel" screen="SCR023" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.BulkCompSelectCancelWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.BulkCompSelectCancelFlowHandler">
+           <handler-result result="1" screen="SCR023"/>
+       </flow-handler>
+    </request>
+
+ <request url="/bulkcompselectproceed" screen="xxx" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.BulkCompSelectProceedWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.BulkCompSelectProceedFlowHandler">
+           <handler-result result="1" screen="SCR023"/>
+           <handler-result result="2" screen="SCR024"/>
+           <handler-result result="3" screen="QUESTION_SCREEN"/>
+       </flow-handler>
+    </request>
+
+ <request url="/bulkcompselectrefresh" screen="xxx" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.BulkCompSelectRefreshWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.BulkCompSelectRefreshFlowHandler">
+           <handler-result result="1" screen="SCR023"/>
+           <handler-result result="2" screen="QUESTION_SCREEN"/>
+       </flow-handler>
+    </request>
+
+ <request url="/bulkcompselectnext" screen="SCR023" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.BulkCompSelectNextWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.BulkCompSelectNextFlowHandler">
+           <handler-result result="1" screen="SCR023"/>
+       </flow-handler>
+    </request>
+
+ <request url="/bulkcompselectprev" screen="SCR023" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.BulkCompSelectPrevWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.BulkCompSelectPrevFlowHandler">
+           <handler-result result="1" screen="SCR023"/>
+       </flow-handler>
+    </request>
+
+ <request url="/securitynotesproceed" screen="SCR008" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SecurityNotesProceedWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SecurityNotesProceedFlowHandler">
+           <handler-result result="1" screen="SCR008"/>
+                <handler-result result="2" screen="SCR009"/>
+                <handler-result result="3" screen="SCR016"/>
+                <handler-result result="4" screen="SCR017"/>
+                <handler-result result="5" screen="SCR015"/>
+                <handler-result result="6" screen="SCR020"/>
+                <handler-result result="7" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+ <request url="/securitynotesexit" screen="SCR008" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SecurityNotesExitWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SecurityNotesExitFlowHandler">
+           <handler-result result="1" screen="SCR008"/>
+           <handler-result result="2" screen="SCR005"/>
+           <handler-result result="3" screen="SCR006"/>
+           <handler-result result="4" screen="SCR007"/>
+           <handler-result result="5" screen="CLOSE_WINDOW"/>
+           <handler-result result="6" screen="SCR045"/>
+       </flow-handler>
+    </request>
+
+    <request url="/maintaingroup" screen="SCR027" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.MaintainGroupWebHandler</web-handler-class>
+    </request>
+
+    <request url="/maintaingroupfind" screen="SCR027" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MaintainGroupFindWebHandler</web-handler-class>
+    </request>
+
+    <request url="/maintaingroupcancel" screen="xxxx" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MaintainGroupCancelWebHandler</web-handler-class>
+    </request>
+
+    <request url="/maintaingroupupdategroup" screen="SCR027" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MaintainGroupUpdateWebHandler</web-handler-class>
+    </request>
+
+    <request url="/maintaingroupclear" screen="SCR027" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MaintainGroupClearWebHandler</web-handler-class>
+    </request>
+
+    <request url="/selectgroupsearchresult" screen="SCR007" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.GroupSearchCorWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.GroupSearchCorFlowHandler">
+           <handler-result result="1" screen="SCR007"/>
+                <handler-result result="2" screen="SCR008"/>
+                <handler-result result="3" screen="SCR017"/>
+                <handler-result result="4" screen="SCR016"/>
+                <handler-result result="5" screen="SCR015"/>
+                <handler-result result="6" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+    <request url="/selectosndresult" screen="SCR006" useWebHandler="true" useFlowHandler="true">
+            <web-handler-class>com.xchanging.xcc.web.handlers.OSNDSearchCorWebHandler</web-handler-class>
+              <flow-handler class="com.xchanging.xcc.flow.handlers.OSNDSearchCorFlowHandler">
+                  <handler-result result="1" screen="SCR006"/>
+                <handler-result result="2" screen="SCR008"/>
+                <handler-result result="3" screen="SCR017"/>
+                <handler-result result="4" screen="SCR016"/>
+                <handler-result result="5" screen="SCR015"/>
+                <handler-result result="6" screen="SCR017_enquiry"/>
+              </flow-handler>
+    </request>
+
+ <request url="/groupresultscancel" screen="SCR007" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.GroupSearchCancelWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.GroupSearchCancelFlowHandler">
+           <handler-result result="1" screen="SCR007"/>
+                <handler-result result="2" screen="SCR005"/>
+       </flow-handler>
+    </request>
+
+ <request url="/groupresultsnext" screen="SCR007" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.GroupSearchNextWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.GroupSearchNextFlowHandler">
+           <handler-result result="1" screen="SCR007"/>
+       </flow-handler>
+    </request>
+
+ <request url="/groupresultsprev" screen="SCR007" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.GroupSearchPrevWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.GroupSearchPrevFlowHandler">
+           <handler-result result="1" screen="SCR007"/>
+       </flow-handler>
+    </request>
+
+ <request url="/groupenquiryfind" screen="SCR028" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.GroupEnquiryFindWebHandler</web-handler-class>
+    </request>
+
+    <request url="/groupenquirycancel" screen="CLOSE_WINDOW" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.GroupEnquiryCancelWebHandler</web-handler-class>
+    </request>
+
+    <request url="/addtononagggroup" screen="SCR028" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.AddToNonAggWebHandler</web-handler-class>
+    </request>
+
+    <request url="/createnonagggroup" screen="CONFIRMATION_SCREEN" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.CreateNonAggWebHandler</web-handler-class>
+    </request>
+
+    <request url="/addtoagggroup" screen="CONFIRMATION_SCREEN" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.AddToAggWebHandler</web-handler-class>
+    </request>
+
+    <request url="/groupenquiry" screen="SCR028" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.GroupEnquiryWebHandler</web-handler-class>
+    </request>
+
+ <request url="/groupenquiryprevccy" screen="SCR028" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.GroupEnquiryPrevCcyWebHandler</web-handler-class>
+    </request>
+
+    <request url="/groupenquirynextccy" screen="SCR028" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.GroupEnquiryNextCcyWebHandler</web-handler-class>
+    </request>
+
+    <request url="/groupenquiryadd" screen="SCR028" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.GroupEnquiryAddWebHandler</web-handler-class>
+    </request>
+
+ <request url="/findclaimsearch" screen="SCR005" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.FindClaimSearchWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.FindClaimSearchFlowHandler">
+              <handler-result result="1" screen="SCR005"/>
+              <handler-result result="2" screen="SCR006"/>
+              <handler-result result="3" screen="SCR007"/>
+              <handler-result result="4" screen="SCR009"/>
+              <handler-result result="5" screen="SCR008"/>
+              <handler-result result="6" screen="SCR017"/>
+              <handler-result result="7" screen="SCR016"/>
+              <handler-result result="8" screen="SCR020"/>
+              <handler-result result="9" screen="SCR045"/>
+              <handler-result result="10" screen="SCR017_enquiry"/>              
+              <handler-result result="11" screen="SCR015"/>
+       </flow-handler>
+    </request>
+
+ <request url="/concofbulksettnextccy" screen="SCR024" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ConcOfBulkSettNextCcyWebHandler</web-handler-class>
+    </request>
+
+ <request url="/concofbulksettprevccy" screen="SCR024" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ConcOfBulkSettPrevCcyWebHandler</web-handler-class>
+    </request>
+
+ <request url="/concofbulksettproceed" screen="SCR022" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ConcOfBulkSettProceedWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.ConcOfBulkSettProceedFlowHandler">
+           <handler-result result="1" screen="SCR022"/>
+   <handler-result result="2" screen="SCR024"/>
+       </flow-handler>
+    </request>
+
+ <request url="/summarysexit" screen="SCR022" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummSettExitWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SummSettExitFlowHandler">
+           <handler-result result="1" screen="SCR022"/>
+           <handler-result result="2" screen="SCR004"/>
+           <handler-result result="3" screen="SCR005"/>
+           <handler-result result="4" screen="SCR025"/>
+           <handler-result result="5" screen="SCR026"/>
+           <handler-result result="6" screen="CLOSE_WINDOW"/>
+           <handler-result result="7" screen="SCR006"/>
+            <handler-result result="8" screen="SCR045"/>
+       </flow-handler>
+    </request>
+
+  <request url="/summarySelect" screen="SCR022" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummSelectWebHandler</web-handler-class>
+    </request>
+
+ <request url="/summaryshold" screen="SCR022" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummSettHoldWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SummSettHoldFlowHandler">
+           <handler-result result="1" screen="SCR022"/>
+           <handler-result result="2" screen="SCR004"/>
+           <handler-result result="3" screen="SCR005"/>
+           <handler-result result="4" screen="SCR025"/>
+           <handler-result result="5" screen="SCR026"/>
+           <handler-result result="6" screen="CLOSE_WINDOW"/>
+           <handler-result result="7" screen="SCR006"/>
+           <handler-result result="8" screen="SCR007"/>
+		   <handler-result result="9" screen="SCR045"/>
+       </flow-handler>
+    </request>
+
+ <request url="/summarysdelete" screen="SCR022" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummSettDeleteWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SummSettDeleteFlowHandler">
+           <handler-result result="1" screen="SCR022"/>
+           <handler-result result="2" screen="SCR004"/>
+           <handler-result result="3" screen="SCR005"/>
+           <handler-result result="4" screen="SCR025"/>
+           <handler-result result="5" screen="SCR026"/>
+           <handler-result result="6" screen="CLOSE_WINDOW"/>
+           <handler-result result="7" screen="SCR006"/>
+            <handler-result result="8" screen="SCR045"/>
+       </flow-handler>
+    </request>
+
+ <request url="/summaryscancel" screen="SCR022" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummSettCancelWebHandler</web-handler-class>
+    </request>
+
+ <request url="/summarysrelease" screen="SCR022" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummSettReleaseWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SummSettReleaseFlowHandler">
+           <handler-result result="1" screen="SCR022"/>
+           <handler-result result="2" screen="SCR004"/>
+           <handler-result result="3" screen="SCR005"/>
+           <handler-result result="4" screen="SCR025"/>
+           <handler-result result="5" screen="SCR026"/>
+           <handler-result result="6" screen="CLOSE_WINDOW"/>
+           <handler-result result="7" screen="SCR006"/>
+           <handler-result result="8" screen="SCR009"/>
+           <handler-result result="9" screen="SCR007"/>
+           <handler-result result="10" screen="SCR045"/>
+       </flow-handler>
+    </request>
+
+ <request url="/summarynsdelete" screen="SCR021" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummNonSettDeleteWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SummNonSettDeleteFlowHandler">
+           <handler-result result="1" screen="SCR021"/>
+           <handler-result result="2" screen="SCR004"/>
+           <handler-result result="3" screen="SCR005"/>
+           <handler-result result="4" screen="SCR025"/>
+           <handler-result result="5" screen="SCR026"/>
+           <handler-result result="6" screen="CLOSE_WINDOW"/>
+           <handler-result result="7" screen="SCR006"/>
+           <handler-result result="8" screen="SCR045"/>
+       </flow-handler>
+    </request>
+
+ <request url="/summarynsrelease" screen="SCR021" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummNonSettReleaseWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SummNonSettReleaseFlowHandler">
+           <handler-result result="1" screen="SCR021"/>
+           <handler-result result="2" screen="SCR004"/>
+           <handler-result result="3" screen="SCR005"/>
+           <handler-result result="4" screen="SCR025"/>
+           <handler-result result="5" screen="SCR026"/>
+           <handler-result result="6" screen="CLOSE_WINDOW"/>
+           <handler-result result="7" screen="SCR006"/>
+           <handler-result result="8" screen="SCR009"/>
+           <handler-result result="9" screen="SCR007"/>
+           <handler-result result="10" screen="SCR045"/>
+       </flow-handler>
+    </request>
+
+ <request url="/summarynshold" screen="SCR021" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummNonSettHoldWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SummNonSettHoldFlowHandler">
+           <handler-result result="1" screen="SCR021"/>
+           <handler-result result="2" screen="SCR004"/>
+           <handler-result result="3" screen="SCR005"/>
+           <handler-result result="4" screen="SCR025"/>
+           <handler-result result="5" screen="SCR026"/>
+           <handler-result result="6" screen="CLOSE_WINDOW"/>
+           <handler-result result="7" screen="SCR006"/>
+           <handler-result result="8" screen="SCR007"/>
+           <handler-result result="9" screen="SCR045"/>
+       </flow-handler>
+    </request>
+
+ <request url="/summarynsexit" screen="SCR021" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummNonSettExitWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SummNonSettExitFlowHandler">
+           <handler-result result="1" screen="SCR021"/>
+           <handler-result result="2" screen="SCR004"/>
+           <handler-result result="3" screen="SCR005"/>
+           <handler-result result="4" screen="SCR025"/>
+           <handler-result result="5" screen="SCR026"/>
+           <handler-result result="6" screen="CLOSE_WINDOW"/>
+           <handler-result result="7" screen="SCR006"/>
+           <handler-result result="8" screen="SCR045"/>
+       </flow-handler>
+    </request>
+
+ <request url="/summarynscancel" screen="SCR021" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SummNonSettCancelWebHandler</web-handler-class>
+    </request>
+
+ <request url="/scmadvicesave" screen="SCR017" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceSaveWebHandler</web-handler-class>
+    </request>
+
+ <request url="/scmadviceendbd" screen="SCR017" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceEndBDWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SCMAdviceEndBDFlowHandler">
+                  <handler-result result="1" screen="SCR017"/>
+                  <handler-result result="2" screen="SCR021"/>
+                  <handler-result result="3" screen="SCR022"/>
+                  <handler-result result="4" screen="SCR015"/>
+                  <handler-result result="5" screen="SCR020"/>
+                  <handler-result result="6" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+ <request url="/scmadvicenewbd" screen="SCR017" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceNewBDWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SCMAdviceNewBDFlowHandler">
+           <handler-result result="1" screen="SCR017"/>
+           <handler-result result="2" screen="SCR016"/>
+           <handler-result result="3" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+ <request url="/scmadvicecreaterischedule" screen="xxx" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceCreateRIWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SCMAdviceCreateRIFlowHandler">
+           <handler-result result="1" screen="xxx"/>
+       </flow-handler>
+    </request>
+
+ <request url="/scmadvicecreatebinderschedule" screen="xxx" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceCreateBinderWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SCMAdviceCreateBinderFlowHandler">
+           <handler-result result="1" screen="xxx"/>
+       </flow-handler>
+    </request>
+
+ <request url="/scmadvicebacktoschedule" screen="SCR020" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceBackToSchWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SCMAdviceBackToSchFlowHandler">
+           <handler-result result="1" screen="SCR017"/>
+           <handler-result result="2" screen="SCR020"/>
+           <handler-result result="3" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+ <request url="/scmadviceeuroconvdetails" screen="SCR031" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceEuroConvWebHandler</web-handler-class>
+    </request>
+
+ <request url="/scmadviceccsamounts" screen="SCR032" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceCCSAmountsWebHandler</web-handler-class>
+    </request>
+
+ <request url="/scmadvicecancel" screen="SCR017" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceCancelWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.SCMAdviceCancelFlowHandler">
+           <handler-result result="1" screen="SCR017"/>
+           <handler-result result="2" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+ <request url="/vatrates" screen="VAT_RATES_SCREEN" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceVATWebHandler</web-handler-class>
+    </request>
+
+  <request url="/vatratesok" screen="BACK_TWO" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.VATRatesOKWebHandler</web-handler-class>
+    </request>
+
+  <request url="/scmadvicevatdelete" screen="BACK" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.SCMAdviceVATDeleteWebHandler</web-handler-class>
+    </request>
+
+ <request url="/policyriskdetailssave" screen="SCR012" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.PolicyRiskSaveWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.PolicyRiskSaveFlowHandler">
+           <handler-result result="1" screen="SCR012"/>
+       </flow-handler>
+    </request>
+
+ <request url="/policyriskdetailscontinue" screen="SCR013" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.PolicyRiskSaveWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.PolicyRiskContFlowHandler">
+           <handler-result result="1" screen="SCR013"/>
+       </flow-handler>
+    </request>
+
+ <request url="/policyriskdetailscancel" screen="SCR012" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.PolicyRiskCancelWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.PolicyRiskCancelFlowHandler">
+           <handler-result result="1" screen="SCR012"/>
+       </flow-handler>
+    </request>
+
+    <request url="/marketdetailserror" screen="SCR013" useWebHandler="false" useFlowHandler="false">
+    </request>
+
+ <request url="/marketdetailsdelete" screen="SCR013" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MarketDetailsSaveWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.MarketDetailsSaveFlowHandler">
+           <handler-result result="1" screen="SCR013"/>
+       </flow-handler>
+    </request>
+
+ <request url="/marketdetailssave" screen="SCR013" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MarketDetailsSaveWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.MarketDetailsSaveFlowHandler">
+           <handler-result result="1" screen="SCR013"/>
+       </flow-handler>
+    </request>
+
+ <request url="/marketdetailscontinue" screen="SCR014" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MarketDetailsContWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.MarketDetailsContFlowHandler">
+                <handler-result result="1" screen="SCR013"/>
+           <handler-result result="2" screen="SCR014"/>
+       </flow-handler>
+    </request>
+
+ <request url="/marketdetailscancel" screen="SCR013" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.MarketDetailsCancelWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.MarketDetailsCancelFlowHandler">
+           <handler-result result="1" screen="SCR013"/>
+       </flow-handler>
+    </request>
+
+ <request url="/claimdetailssave" screen="SCR014" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ClaimDetailsSaveWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.ClaimDetailsSaveFlowHandler">
+           <handler-result result="1" screen="SCR014"/>
+       </flow-handler>
+    </request>
+
+  <request url="/refreshclaimdetails" screen="SCR014" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.RefreshClaimDetailsWebHandler</web-handler-class>
+    </request>
+
+ <request url="/claimdetailscontinue" screen="SCR015" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ClaimDetailsContWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.ClaimDetailsContFlowHandler">
+                <handler-result result="1" screen="SCR014"/>
+           <handler-result result="2" screen="SCR015"/>
+       </flow-handler>
+    </request>
+
+ <request url="/claimdetailscancel" screen="SCR014" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ClaimDetailsCancelWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.ClaimDetailsCancelFlowHandler">
+           <handler-result result="1" screen="SCR014"/>
+       </flow-handler>
+    </request>
+
+ <request url="/update27DB" screen="SCR009" useWebHandler="true" useFlowHandler="false" >
+     <web-handler-class>com.xchanging.xcc.web.handlers.LY27DBUpdateWebHandler</web-handler-class>
+    </request>
+
+ <request url="/loginScreen" screen="LOGIN_SCREEN" requiresSignin="true"/>
+
+ <request url="/home" screen="SCR003" useWebHandler="true" >
+     <web-handler-class>com.xchanging.xcc.web.handlers.HomeWebHandler</web-handler-class>
+ </request>
+
+ <request url="/login" screen="SCR003" useWebHandler="true" useFlowHandler="true" >
+     <web-handler-class>com.xchanging.xcc.web.handlers.LoginWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.LoginFlowHandler">
+           <handler-result result="1" screen="SCR003"/>
+           <handler-result result="3" screen="SCR002"/>
+       </flow-handler>
+    </request>
+
+ <request url="/changePassword" screen="SCR003" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ChangePasswordWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.LoginFlowHandler">
+           <handler-result result="1" screen="SCR003"/>
+           <handler-result result="3" screen="SCR002"/>
+       </flow-handler>
+    </request>
+
+ <request url="/financialdetailscontrolcontinue" screen="SCR015" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.FinancialDetailsCntrContWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.FinancialDetailsCntrContFlowHandler">
+                  <handler-result result="1" screen="SCR015"/>
+                  <handler-result result="2" screen="SCR023"/>
+                  <handler-result result="3" screen="SCR020"/>
+                  <handler-result result="4" screen="SCR016"/>
+                  <handler-result result="5" screen="SCR017"/>
+                  <handler-result result="6" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+ <request url="/financialdetailscontrolcancel" screen="SCR015" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.FinancialDetailsCntrCnclWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.FinancialDetailsCntrCnclFlowHandler">
+           <handler-result result="1" screen="SCR015"/>
+       </flow-handler>
+    </request>
+
+ <request url="/financialdetailscontrolsave" screen="SCR015" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.FinancialDetailsCntrSaveWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.FinancialDetailsCntrSaveFlowHandler">
+           <handler-result result="1" screen="SCR015"/>
+       </flow-handler>
+    </request>
+
+ <request url="/logoff" screen="CLOSE_WINDOW" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.LogoffWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.LogoffFlowHandler">
+           <handler-result result="1" screen="CLOSE_WINDOW"/>
+           <handler-result result="2" screen="CLOSE_WINDOW"/>
+       </flow-handler>
+    </request>
+
+    <request url="/createnewclaim" screen="SCR004" useWebHandler="true" useFlowHandler="true">
+        <web-handler-class>com.xchanging.xcc.web.handlers.CreateNewClaimWebHandler</web-handler-class>
+        <flow-handler class="com.xchanging.xcc.flow.handlers.CreateNewClaimFlowHandler">
+           <handler-result result="1" screen="SCR004"/>
+           <handler-result result="2" screen="SCR010"/>
+       </flow-handler>
+    </request>
+
+ <request url="/createnewadvice" screen="" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.CreateNewAdviceWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.CreateNewAdviceFlowHandler">
+           <handler-result result="1" screen="SCR009"/>
+   <handler-result result="2" screen="SCR006"/>
+       </flow-handler>
+    </request>
+
+ <request url="/continuewithnewadvice" screen="SCR009" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ContinueWithNewAdviceWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.ContinueWithNewAdviceFlowHandler">
+           <handler-result result="1" screen="SCR009"/>
+       </flow-handler>
+    </request>
+
+ <request url="/claimtxncreationsave" screen="SCR011" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ClaimTxnCreationSaveWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.ClaimTxnCreationSaveFlowHandler">
+           <handler-result result="1" screen="SCR011"/>
+           <handler-result result="2" screen="LY27_DB_UPDATE_SCREEN"/>
+           <handler-result result="3" screen="ERROR_INDICATE"/>
+           <handler-result result="4" screen="SCR009"/>
+           <handler-result result="7" screen="PREMIUM_COMPARISON"/>
+       </flow-handler>
+    </request>
+
+    <request url="/premcompok" screen="SCR011" useWebHandler="false" useFlowHandler="true">
+       <flow-handler class="com.xchanging.xcc.flow.handlers.PremCompOkFlowHandler">
+           <handler-result result="1" screen="SCR009"/>
+           <handler-result result="2" screen="SCR012"/>
+           <handler-result result="3" screen="SCR013"/>
+           <handler-result result="4" screen="SCR014"/>
+           <handler-result result="5" screen="SCR015"/>
+           <handler-result result="6" screen="SCR020"/>
+           <handler-result result="7" screen="SCR017"/>
+           <handler-result result="8" screen="SCR022"/>
+           <handler-result result="9" screen="SCR021"/>
+           <handler-result result="10" screen="SCR023"/>
+           <handler-result result="11" screen="SCR024"/>
+           <handler-result result="12" screen="SCR016"/>
+           <handler-result result="13" screen="SCR003"/>
+           <handler-result result="14" screen="SCR011"/>
+           <handler-result result="15" screen="LY27_DB_UPDATE_SCREEN"/>
+           <handler-result result="16" screen="ERROR_INDICATE"/>
+           <handler-result result="17" screen="SCR004"/>
+           <handler-result result="18" screen="SCR005"/>
+           <handler-result result="19" screen="SCR025"/>
+           <handler-result result="20" screen="SCR026"/>
+           <handler-result result="21" screen="SCR011"/>
+           <handler-result result="22" screen="SCR035"/>
+           <handler-result result="23" screen="SCR033"/>
+           <handler-result result="24" screen="SCR017_enquiry"/>
+       </flow-handler>
+    </request>
+
+ <request url="/claimtxncreationcontinue" screen="SCR011" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ClaimTxnCreationSaveWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.ClaimTxnCreationSaveFlowHandler">
+           <handler-result result="1" screen="SCR011"/>
+                <handler-result result="2" screen="LY27_DB_UPDATE_SCREEN"/>
+                <handler-result result="3" screen="ERROR_INDICATE"/>
+                <handler-result result="4" screen="SCR009"/>
+                <handler-result result="5" screen="SCR012"/>
+                <handler-result result="6" screen="SCR015"/>
+                <handler-result result="7" screen="PREMIUM_COMPARISON"/>
+       </flow-handler>
+    </request>
+
+     <request url="/claimtxncancel" screen="SCR009" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ClaimTxnCreationCancelWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.ClaimTxnCreationCancelFlowHandler">
+           <handler-result result="1" screen="SCR009"/>
+       </flow-handler>
+     </request>
+
+ <request url="/claimtxncreationbringfwdbd" screen="SCR009" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ClaimTxnCreationBringfwdbdWebHandler</web-handler-class>
+    </request>
+
+ <request url="/claimtxncreationdeletebd" screen="SCR009" useWebHandler="true" useFlowHandler="false">
+     <web-handler-class>com.xchanging.xcc.web.handlers.ClaimTxnCreationDeletebdWebHandler</web-handler-class>
+    </request>
+
+ <request url="/prevosndresults" screen="SCR006" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.PrevOSNDResultsWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.PrevOSNDResultsFlowHandler">
+           <handler-result result="1" screen="SCR006"/>
+       </flow-handler>
+    </request>
+
+ <request url="/nextosndresults" screen="SCR006" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.NextOSNDResultsWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.NextOSNDResultsFlowHandler">
+           <handler-result result="1" screen="SCR006"/>
+       </flow-handler>
+    </request>
+
+ <request url="/osndresultscancel" screen="SCR006" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.OSNDResultsCancelWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.OSNDResultsCancelFlowHandler">
+           <handler-result result="1" screen="SCR006"/>
+                <handler-result result="2" screen="SCR005"/>
+                <handler-result result="3" screen="SCR004"/>
+       </flow-handler>
+    </request>
+
+    <request url="/createreadvice" screen="SCR_CREATE_READVICE" useWebHandler="true" useFlowHandler="false">
+            <web-handler-class>com.xchanging.xcc.web.handlers.CreateReadviceWebHandler</web-handler-class>
+    </request>
+
+    <request url="/createreadviceok" screen="SCR021" useWebHandler="true" useFlowHandler="true">
+     <web-handler-class>com.xchanging.xcc.web.handlers.CreateReadviceOKWebHandler</web-handler-class>
+       <flow-handler class="com.xchanging.xcc.flow.handlers.CreateReadviceOKFlowHandler">
+           <handler-result result="1" screen="SCR021"/>
+       </flow-handler>
+    </request>
+
+	<!-- Expert Fee Break Down Function -->
+    <request url="/expertfeebreakdownupdateupdate" screen="EXPERT_FEE_BREAK_DOWN_SCREEN" useWebHandler="true" useFlowHandler="false">
+       	<web-handler-class>com.xchanging.xcc.web.handlers.ExpertFeeBreakDownWebHandler</web-handler-class>
+    </request>
+    <request url="/expertfeebreakdownenquiryupdate" screen="EXPERT_FEE_BREAK_DOWN_SCREEN" useWebHandler="false" useFlowHandler="false">
+    </request>
+    <request url="/expertfeebreakdownupdateenquiry" screen="EXPERT_FEE_BREAK_DOWN_SCREEN_ENQUIRY" useWebHandler="true" useFlowHandler="false">
+    	<web-handler-class>com.xchanging.xcc.web.handlers.ExpertFeeBreakDownWebHandler</web-handler-class>
+    </request>
+    <request url="/expertfeebreakdownenquiryenquiry" screen="EXPERT_FEE_BREAK_DOWN_SCREEN_ENQUIRY" useWebHandler="false" useFlowHandler="false">
+    </request>
+ 	<request url="/expertfeebreakdownupdateok" screen="SCR017" useWebHandler="true" useFlowHandler="false">
+     	<web-handler-class>com.xchanging.xcc.web.handlers.ExpertFeeBreakDownOKWebHandler</web-handler-class>
+    </request>
+    <request url="/expertfeebreakdownupdatecancel" screen="SCR017" useWebHandler="false" useFlowHandler="false">
+    </request>
+ 	<request url="/expertfeebreakdownenquiryok" screen="SCR017_enquiry" useWebHandler="true" useFlowHandler="false">
+     	<web-handler-class>com.xchanging.xcc.web.handlers.ExpertFeeBreakDownOKWebHandler</web-handler-class>
+    </request>
+    <request url="/expertfeebreakdownenquirycancel" screen="SCR017_enquiry" useWebHandler="false" useFlowHandler="false">
+    </request>
+
+	<!-- CCVC Questionnaire Screen -->
+    <request url="/ccvcquestionnaire" screen="CCVC_QUESTIONNAIRE_SCREEN" useWebHandler="true" useFlowHandler="false">
+        <web-handler-class>com.xchanging.xcc.web.handlers.CCVCQuestionnaireWebHandler</web-handler-class>
+    </request>
+    <request url="/ccvcquestionnaireok" screen="SCR022" useWebHandler="true" useFlowHandler="false">
+        <web-handler-class>com.xchanging.xcc.web.handlers.CCVCQuestionnaireOKWebHandler</web-handler-class>
+    </request>
+    <request url="/ccvcquestionnairecancel" screen="SCR022" useWebHandler="false" useFlowHandler="false">
+    </request>
+
+
+    <exception-mapping exception-class="com.xchanging.xcc.exceptions.ClaimsWarningException" screen="WARNING_SCREEN"/>
+ <exception-mapping exception-class="com.xchanging.xcc.exceptions.ClaimsErrorException" screen="ERROR_SCREEN"/>
+    <exception-mapping exception-class="com.xchanging.xcc.exceptions.GeneralFailureException" screen="SYSTEM_ERROR_SCREEN"/>
+ <exception-mapping exception-class="javax.resource.spi.CommException" screen="SYSTEM_ERROR_SCREEN"/>
+</request-mappings>
+
+<!--
+  == =================================================================================
+  == Change History:
+  == ===============
+  ==
+  == $Log: requestmap.xml,v $
+  == Revision 1.4  2004/05/07 14:11:28  clintonj
+  == New scheme canada 'confirm screen' changes
+  ==
+  == Revision 1.3  2004/03/11 11:09:52  clintonj
+  == Navigation (from Bulk Header) issues fixed.
+  == Enhanced commenting added.
+  ==
+  ==
+  == =================================================================================
+-->

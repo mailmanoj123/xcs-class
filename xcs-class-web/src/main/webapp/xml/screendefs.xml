@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+  == =================================================================================
+  == Script Name: screendefs.xml
+  == ============
+  ==  
+  == Description:  
+  == ============
+  == This file describes for each screen the template used to format the page, and 
+  == key/parameter values used to provide content the content.
+  == 
+  == Author: Steria Ltd
+  == =======
+  ==
+  == Change History:  
+  == ===============
+  == Please see EOF for all change history.  
+  ==
+  == =================================================================================
+-->  
+
+<screen-definitions>
+
+        <screen>
+            <screen-name>SCHEME_CANADA_SCREEN</screen-name>
+            <template>/template_sc.jsp</template>
+            <parameter key="ScreenTitle" value="Scheme Canada" direct="true"/>
+            <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+            <parameter key="AccessButtons" value="/hbuttonsscautologoffonly.jsp" direct="false"/>
+            <parameter key="ScreenBody" value="/schemecanada.jsp" direct="false"/>
+        </screen>
+        
+        <screen>
+            <screen-name>SC_PROCESS_SCREEN</screen-name>
+            <template>/basic_template.jsp</template>
+            <parameter key="ScreenTitle" value="Scheme Canada Save Confirmed" direct="true"/>
+            <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+            <parameter key="ScreenBody" value="/scsaveconfirm.jsp" direct="false"/>
+        </screen>
+
+        <screen>
+            <screen-name>SC_SAVE_CONFIRMED_SCREEN</screen-name>
+            <template>/basic_template.jsp</template>
+            <parameter key="ScreenTitle" value="Scheme Canada Save Confirmed" direct="true"/>
+            <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+            <parameter key="ScreenBody" value="/scsaveconfirm.jsp" direct="false"/>
+        </screen>
+
+        <screen>
+            <screen-name>SC_PROCESS_CONFIRMED_SCREEN</screen-name>
+            <template>/basic_template.jsp</template>
+            <parameter key="ScreenTitle" value="Scheme Canada Process Confirmed" direct="true"/>
+            <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+            <parameter key="ScreenBody" value="/scprocessconfirm.jsp" direct="false"/>
+        </screen>
+        
+        <screen>
+            <screen-name>SC_CONFIRM_PROCESS_SCREEN</screen-name>
+            <template>/basic_template.jsp</template>
+            <parameter key="ScreenTitle" value="Question" direct="true"/>
+            <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+            <parameter key="ScreenBody" value="/scconfirmprocess.jsp" direct="false"/>
+        </screen>
+        
+        <screen>
+            <screen-name>SC_CONFIRM_EXIT_SCREEN</screen-name>
+            <template>/basic_template.jsp</template>
+            <parameter key="ScreenTitle" value="Scheme Canada Confirm Exit" direct="true"/>
+            <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+            <parameter key="ScreenBody" value="/scconfirmexit.jsp" direct="false"/>
+        </screen>
+
+        <screen>
+            <screen-name>CLOSE_WINDOW</screen-name>
+            <template>/closewindow.jsp</template>
+  </screen>
+
+        <screen>
+            <screen-name>NARR_CLOSE_WINDOW</screen-name>
+            <template>/narrclosewindow.jsp</template>
+        </screen>
+
+  <screen>
+      <screen-name>LOGIN_LAUNCH_SCREEN</screen-name>
+      <template>/index2.jsp</template>
+  </screen>
+
+  <screen>
+    <screen-name>LOGIN_SCREEN</screen-name>
+    <template>/login.jsp</template>
+  </screen>
+
+  <screen>
+    <screen-name>LY27_DB_UPDATE_SCREEN</screen-name>
+    <template>/blank_template.jsp</template>
+      <parameter key="ScreenTitle" value="Updating Database..." direct="true"/>
+      <parameter key="ScreenBody" value="/ly27DBUpdate.jsp" direct="false"/>
+  </screen>
+
+  <screen>
+    <screen-name>WARNING_SCREEN</screen-name>
+    <template>/basic_template.jsp</template>
+      <parameter key="ScreenTitle" value="Claims Warning" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/warning.jsp" direct="false"/>
+  </screen>
+
+  <screen>
+    <screen-name>ERROR_SCREEN</screen-name>
+    <template>/basic_template.jsp</template>
+      <parameter key="ScreenTitle" value="Claims Error" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/error.jsp" direct="false"/>
+  </screen>
+
+ <screen>
+         <screen-name>ERROR_INDICATE</screen-name>
+         <template>/basic_template.jsp</template>
+     <parameter key="ScreenTitle" value="Claims Error" direct="true"/>
+     <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+     <parameter key="ScreenBody" value="/errorindicate.jsp" direct="false"/>
+ </screen>
+
+  <screen>
+    <screen-name>SCR002</screen-name>
+    <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Please Change your Password" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+      <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/changepassword.jsp" direct="false"/>
+  </screen>
+
+  <screen>
+      <screen-name>SCR003</screen-name>
+      <template>/template_1.jsp</template>
+      <parameter key="ScreenTitle" value="Welcome to Claims Online" direct="true"/>
+       <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+      <parameter key="AccessButtons" value="/hbuttonslogoffonly.jsp" direct="false"/>
+      <parameter key="HeaderButtons" value="/hbhome.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/home.jsp" direct="false"/>
+  </screen>
+
+  <screen>
+      <screen-name>SYSTEM_ERROR_SCREEN</screen-name>
+      <template>/basic_template.jsp</template>
+      <parameter key="ScreenTitle" value="System Error" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/systemerror.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR004</screen-name>
+      <template>/template_1.jsp</template>
+      <parameter key="ScreenTitle" value="Create Claims" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbcreateclaim.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/createclaimcontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR009</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Claim Transaction Creation" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbclaimtransactioncreation.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/claimtransactioncreationcontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR006</screen-name>
+      <template>/template_1.jsp</template>
+      <parameter key="ScreenTitle" value="OSND Search Results" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbosndsearchresults.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/osndsearchresultscontent.jsp" direct="false"/>
+    </screen>
+
+        <screen>
+          <screen-name>SCR045</screen-name>
+          <template>/template_1.jsp</template>
+          <parameter key="ScreenTitle" value="Advanced Search Results" direct="true"/>
+          <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+          <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+          <parameter key="HeaderButtons" value="/hbosndsearchresults.jsp" direct="false"/>
+          <parameter key="ScreenBody" value="/advancedsearchresultscontent.jsp" direct="false"/>
+        </screen>
+
+  <screen>
+      <screen-name>SCR011</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Market Selection" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/marketselectioncontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR013</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Market Details Screen" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbmarketdetails.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/marketdetailscontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR012</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Policy Risk Details" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbpolicyriskdetails.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/policyriskdetailscontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR015</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Financial Details" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbfinancialdetailscontrol.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/financialdetailscontrolcontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR010</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Claim Transaction Options" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/claimtransactionoptionscontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR021</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Non-Settlement Summary" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbsummarynonsettlement.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/summarynonsettcontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR022</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Settlement Summary" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbsummarysettlement.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/summarysettcontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+    <screen-name>VAT_RATES_SCREEN</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="VAT Rates" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+      <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/vatratescontent.jsp" direct="false"/>
+  </screen>
+
+  <screen>
+        <screen-name>SCR014</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Claim Details" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbclaimdetails.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/claimdetailscontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR017</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Breakdown - SCM Advice" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbscmadvice.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/scmadvicecontent.jsp" direct="false"/>
+    </screen>
+
+ <screen>
+       <screen-name>SCR017_enquiry</screen-name>
+     <template>/template_3.jsp</template>
+     <parameter key="ScreenTitle" value="Breakdown - SCM Advice" direct="true"/>
+     <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+     <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+     <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+     <parameter key="HeaderButtons" value="/hbscmenquiry.jsp" direct="false"/>
+     <parameter key="ScreenBody" value="/scmenquiry.jsp" direct="false"/>
+</screen>
+
+  <screen>
+        <screen-name>SCR036</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Bulk/CCS Correction" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/bulkccscorrectioncontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR032</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="CCS Amounts" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/ccsamountscontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR024</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Conclusion Of Bulk Settlement" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbconclusionofbulksettlement.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/conclusionofbulksettlementcontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR030</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Contra Correction" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/contracorrectioncontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR033</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Copy From UCR" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/copyfromucrcontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR031</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Euro Conversion Details" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/euroconversiondetailscontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR028</screen-name>
+      <template>/template_1.jsp</template>
+      <parameter key="ScreenTitle" value="Group Enquiry" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbgroupenquiry.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/groupenquirycontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR007</screen-name>
+      <template>/template_1.jsp</template>
+      <parameter key="ScreenTitle" value="Group Search Results" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbgroupsearchresults.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/groupsearchresultscontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR027</screen-name>
+      <template>/template_1.jsp</template>
+      <parameter key="ScreenTitle" value="Maintain Group" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbmaintaingroup.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/maintaingroupcontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR026</screen-name>
+      <template>/template_1.jsp</template>
+      <parameter key="ScreenTitle" value="Movement History" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbmovementshistory.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/movementshistorycontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR035</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Narrative" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/narrativecontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR029</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Rate Of Exchange Adjustment" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/rateofexchangeadjustmentcontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR008</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Security Notes" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/securitynotescontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR023</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Bulk Component Selection" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbselectitemsforbulksettlement.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/selectitemsforbulksettlementcontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR034</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Set Diary Date" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/setdiarydatecontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR016</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Single Claim Loss Reserves" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+                <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbsingleclaimlossreserves.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/singleclaimlossreservescontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+        <screen-name>SCR020</screen-name>
+      <template>/template_3.jsp</template>
+      <parameter key="ScreenTitle" value="Subsequent Advice Schedule" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttonsexit.jsp" direct="false"/>
+    <parameter key="BreadCrumbs" value="/breadcrumb.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbsubsadviceschedule.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/subsadviceschedulecontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR025</screen-name>
+      <template>/template_1.jsp</template>
+      <parameter key="ScreenTitle" value="Transaction History" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbtransactionhistory.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/transactionhistorycontent.jsp" direct="false"/>
+    </screen>
+
+  <screen>
+      <screen-name>SCR005</screen-name>
+      <template>/template_1.jsp</template>
+      <parameter key="ScreenTitle" value="Find Claim" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+    <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+    <parameter key="HeaderButtons" value="/hbfindclaim.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/findclaimcontent.jsp" direct="false"/>
+    </screen>
+
+   <!-- // BA&PD: 24-11-2003: Settlement search screen -->
+   <!-- // DS   : 31-12-2003: Amend to use hButtonSettSearch rather than hButtons -->
+   <screen>
+     <screen-name>SCR041</screen-name>
+     <template>/template_1.jsp</template>
+     <parameter key="ScreenTitle" value="Settlement Search" direct="true"/>
+     <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+     <parameter key="AccessButtons" value="/hButtonSettSearch.jsp" direct="false"/>
+     <parameter key="HeaderButtons" value="/hbsettlementsearch.jsp" direct="false"/>
+     <parameter key="ScreenBody" value="/settlementsearchcontent.jsp" direct="false"/>
+   </screen>
+   <!-- // BA&PD: 24-11-2003: Settlement search screen -->
+   <!-- // DS   : 31-12-2003: Amend to use hButtonSettSearch rather than hButtons -->
+   <screen>
+     <screen-name>SCR042</screen-name>
+     <template>/template_1.jsp</template>
+     <parameter key="ScreenTitle" value="Settlement Search" direct="true"/>
+     <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+     <parameter key="AccessButtons" value="/hButtonSettSearch.jsp" direct="false"/>
+     <parameter key="HeaderButtons" value="/hbsettlementsearch.jsp" direct="false"/>
+     <parameter key="ScreenBody" value="/settlementsearchresults.jsp" direct="false"/>
+   </screen>
+   <!-- // BA&PD: 24-11-2003: Settlement search screen -->
+   <!-- // DS   : 31-12-2003: Amend to use hButtonSettSearch rather than hButtons -->
+   <screen>
+     <screen-name>SCR043</screen-name>
+     <template>/template_1.jsp</template>
+     <parameter key="ScreenTitle" value="Settlement Search" direct="true"/>
+     <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+     <parameter key="AccessButtons" value="/hButtonSettSearch.jsp" direct="false"/>
+     <parameter key="HeaderButtons" value="/hbsettlementsearch.jsp" direct="false"/>
+     <parameter key="ScreenBody" value="/settlementsearchdetailresults.jsp" direct="false"/>
+   </screen>
+
+   <screen>
+            <screen-name>PREMIUM_COMPARISON</screen-name>
+            <template>/template_2.jsp</template>
+            <parameter key="ScreenTitle" value="Premium Comparison" direct="true"/>
+            <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+                <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+            <parameter key="ScreenBody" value="/premiumcomparisoncontent.jsp" direct="false"/>
+    </screen>
+
+        <screen>
+                <screen-name>QUESTION_SCREEN</screen-name>
+                <template>/basic_template.jsp</template>
+            <parameter key="ScreenTitle" value="Question" direct="true"/>
+            <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+            <parameter key="ScreenBody" value="/question.jsp" direct="false"/>
+  </screen>
+
+        <screen>
+                <screen-name>CONFIRMATION_SCREEN</screen-name>
+                <template>/basic_template.jsp</template>
+            <parameter key="ScreenTitle" value="Confirmation" direct="true"/>
+            <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+            <parameter key="ScreenBody" value="/confirmation.jsp" direct="false"/>
+  </screen>
+
+  <screen>
+            <screen-name>BACK</screen-name>
+            <template>/back.jsp</template>
+  </screen>
+
+  <screen>
+            <screen-name>BACK_TWO</screen-name>
+            <template>/backtwo.jsp</template>
+  </screen>
+
+  <screen>
+  <screen-name>SCR_CREATE_READVICE</screen-name>
+            <template>/template_2.jsp</template>
+            <parameter key="ScreenTitle" value="Create Re-Advice" direct="true"/>
+            <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+            <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+            <parameter key="ScreenBody" value="/createreadvicecontent.jsp" direct="false"/>
+  </screen>
+
+  <!-- Expert Fee Breakdown Screen -->
+  <screen>
+    <screen-name>EXPERT_FEE_BREAK_DOWN_SCREEN</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Expert Fees Breakdown" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+      <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/expertfeebreakdowncontent.jsp" direct="false"/>
+  </screen>
+  <screen>
+    <screen-name>EXPERT_FEE_BREAK_DOWN_SCREEN_ENQUIRY</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="Expert Fees Breakdown" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+      <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/expertfeebreakdownenquiry.jsp" direct="false"/>
+  </screen>
+
+  <!-- CCVC Questionnaire Screen -->
+  <screen>
+    <screen-name>CCVC_QUESTIONNAIRE_SCREEN</screen-name>
+      <template>/template_2.jsp</template>
+      <parameter key="ScreenTitle" value="CCVC Questionnaire" direct="true"/>
+      <parameter key="ScreenBanner" value="/banner.jsp" direct="false"/>
+      <parameter key="AccessButtons" value="/hbuttons.jsp" direct="false"/>
+      <parameter key="ScreenBody" value="/ccvcquestionnairecontent.jsp" direct="false"/>
+  </screen>
+
+</screen-definitions>
+
+
+<!--
+  == =================================================================================
+  == Change History:
+  == ===============
+  ==
+  == $Log: screendefs.xml,v $
+  == Revision 1.4  2004/05/07 14:11:28  clintonj
+  == New scheme canada 'confirm screen' changes
+  ==
+  == Revision 1.3  2004/03/11 11:09:52  clintonj
+  == Navigation (from Bulk Header) issues fixed.
+  == Enhanced commenting added.
+  ==
+  ==
+  == =================================================================================
+-->
