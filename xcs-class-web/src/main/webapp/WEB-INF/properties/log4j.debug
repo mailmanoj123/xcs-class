@@ -1,0 +1,17 @@
+log4j.logger.com.inssure.claims=debug, R
+
+log4j.appender.R=org.apache.log4j.RollingFileAppender
+log4j.appender.R.File=/export/home/steria/logs/lloyd.log
+
+log4j.appender.R.MaxFileSize=1024KB
+# Keep one backup file
+log4j.appender.R.MaxBackupIndex=1
+
+log4j.appender.R.layout=org.apache.log4j.PatternLayout
+log4j.appender.R.layout.ConversionPattern=%d [%-5p] %m%n
+
+
+# $Log: log4j.debug,v $
+# Revision 1.2  2004/01/14 12:39:25  coganp
+# added $Log$ command.
+#

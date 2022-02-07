@@ -138,7 +138,7 @@
 							<webModule>
 								<groupId>com.xchanging.xcc</groupId>
 								<artifactId>xcs-class-web</artifactId>
-								<contextRoot>/</contextRoot>
+								<contextRoot>/claims</contextRoot>
 							</webModule>
 						</modules>
 					</configuration>
